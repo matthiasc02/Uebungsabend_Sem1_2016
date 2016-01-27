@@ -9,10 +9,10 @@ public class SparKonto extends Konto{
 
 	
 	public void auszahlen (double wert){
-		if (wert > kontostand){
+		if (kontostand-wert < 0){
 			System.out.println("Betrag zu hoch!");
 		}
-		else kontostand-=wert;
+		else super.auszahlen(wert); 
 	}
 
 	@Override

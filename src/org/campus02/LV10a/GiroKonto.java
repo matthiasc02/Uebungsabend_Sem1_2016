@@ -13,7 +13,7 @@ public class GiroKonto extends Konto{
 		if(kontostand-wert < limit*-1){
 			System.out.println("Betrag zu hoch");
 		}
-		else kontostand-=wert;
+		else super.auszahlen(wert);  //kontostand -= wert; 
 	}
 
 	@Override

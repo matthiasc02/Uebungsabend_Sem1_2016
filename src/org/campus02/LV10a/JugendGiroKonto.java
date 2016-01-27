@@ -10,10 +10,10 @@ public class JugendGiroKonto extends GiroKonto {
 	
 	@Override
 	public void auszahlen(double wert){
-		if(kontostand-wert < limit*-1 || wert > buchungslimit){
+		if(wert > buchungslimit){ //(kontostand-wert < limit*-1 || wert > buchungslimit)
 			System.out.println("Betrag zu hoch");
 		}
-		else kontostand-=wert;
+		else super.auszahlen(wert); 
 	}
 
 	@Override
