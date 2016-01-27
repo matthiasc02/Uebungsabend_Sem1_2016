@@ -69,9 +69,17 @@ public class EventKalender {
 	}
 	
 	public HashMap<String, Integer> getCountByOrt(){
-		 
-		
-		return null;
+		HashMap<String, Integer> groupByOrt = new HashMap<>();
+		for(Event evt : events){
+			Integer value = groupByOrt.get(evt.getOrt());
+			if(value != 0){
+				groupByOrt.put(evt.getOrt(), value + 1);
+			}else {
+				groupByOrt.put(evt.getOrt(),1);
+			}
+			return groupByOrt;
+		}
+				
 		
 	}
 
